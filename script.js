@@ -8,13 +8,14 @@ Otherwise = Lost*/
 const playerSelection = getPlayerSelection();
 const computerSelection = getComputerSelection();
 
-console.log(playerSelection + computerSelection);
+console.log("USER:" + playerSelection + "   -   " + "PC:" + computerSelection);
+
 
 
 
 //Get the input from the user
 function getPlayerSelection() {
-    const playerChoice = prompt();
+    const playerChoice = prompt().toLowerCase();
     return playerChoice;
 }
 
