@@ -8,7 +8,7 @@ Otherwise = Lost*/
 const playerSelection = getPlayerSelection();
 const computerSelection = getComputerSelection();
 
-console.log("USER:" + playerSelection + "   -   " + "PC:" + computerSelection);
+playRound(playerSelection, computerSelection);
 
 
 
@@ -21,7 +21,7 @@ function getPlayerSelection() {
 
 //Get Input from Computer
 function getComputerSelection() {
-    const weaponSelection = ["stone", "paper", "scissor"];
+    const weaponSelection = ["rock", "paper", "scissor"];
     const randomSelection = parseInt(Math.random() * weaponSelection.length);
     const computerChoice = weaponSelection[randomSelection];
     return computerChoice;
@@ -29,11 +29,26 @@ function getComputerSelection() {
 
 
 
-/*
+
 function playRound(playerSelection, computerSelection) {
-    console.log(playerSelection + computerSelection);
+
+    console.log("USER:" + playerSelection + "   -   " + "PC:" + computerSelection);
+
+    if (playerSelection == "rock" && computerSelection == "scissor" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissor" && computerSelection == "paper") {
+        console.log("You have won!");
+    }
+
+    else if (playerSelection == "scissor" && computerSelection == "rock" || playerSelection == "rock" && computerSelection == "paper" || playerSelection == "paper" && computerSelection == "scissor") {
+        console.log("You have lost!");
+    }
+
+    else {
+        console.log("It is a tie!");
+    }
 }
 
+
+/*
 function game() {
     
 }*/
