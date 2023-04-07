@@ -11,23 +11,23 @@ const scissorBtn = document.getElementById("scissor");
 
 const selection = document.getElementById("selection");
 const scoreboard = document.getElementById("scoreboard");
-
+const result = document.getElementById("result");
 
 
 
 rockBtn.addEventListener("click", () => {
     playerSelection = "rock";
-    playRound(playerSelection, getComputerSelection());
+    game()
 })
 
 paperBtn.addEventListener("click", () => {
     playerSelection = "paper";
-    playRound(playerSelection, getComputerSelection());
+    game()
 })
 
 scissorBtn.addEventListener("click", () => {
     playerSelection = "scissor";
-    playRound(playerSelection, getComputerSelection());
+    game()
 })
 
 //Get Input from Computer
@@ -59,24 +59,15 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-
 //Repeats 5 rounds and then decides who has won
-/*
 function game() {
-    for (let i = 0; i < 5; i++) {
-        playRound(getPlayerSelection(), getComputerSelection());
-     }
-
-     if (playerScore > computerScore) {
-        console.log("Congratulations! You have won the game! - Score: USER:" + playerScore + " - " + "PC:" + computerScore);
-     }
-
-     else if (playerScore < computerScore) {
-        console.log("Unfortunately, you have lost the game! - Score: USER:" + playerScore + " - " + "PC:" + computerScore);
-     }
-
-     else {
-        console.log("Well played, but it is a tie! - Score: USER:" + playerScore + " - " +   "PC:" + computerScore);
+    if (playerScore == 5) {
+        result.textContent = "Congratulations! You have won the game! - Score: USER:" + playerScore + " - " + "PC:" + computerScore;
+    }
+    else if (computerScore == 5){
+        result.textContent = "Unfortunately, you have lost the game! - Score: USER:" + playerScore + " - " + "PC:" + computerScore;
+    }
+    else {
+        playRound(playerSelection, getComputerSelection());
     }
 }
-*/
