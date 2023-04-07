@@ -5,8 +5,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 
-game();
-
+playRound(getPlayerSelection(), getComputerSelection());
 
 //Get the input from the user
 function getPlayerSelection() {
@@ -46,6 +45,7 @@ function playRound(playerSelection, computerSelection) {
 
 
 //Repeats 5 rounds and then decides who has won
+/*
 function game() {
     for (let i = 0; i < 5; i++) {
         playRound(getPlayerSelection(), getComputerSelection());
@@ -63,3 +63,4 @@ function game() {
         console.log("Well played, but it is a tie! - Score: USER:" + playerScore + " - " +   "PC:" + computerScore);
     }
 }
+*/
