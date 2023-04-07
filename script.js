@@ -9,6 +9,12 @@ const rockBtn = document.getElementById("rock");
 const paperBtn = document.getElementById("paper");
 const scissorBtn = document.getElementById("scissor");
 
+const selection = document.getElementById("selection");
+const scoreboard = document.getElementById("scoreboard");
+
+
+
+
 rockBtn.addEventListener("click", () => {
     playerSelection = "rock";
     playRound(playerSelection, getComputerSelection());
@@ -36,21 +42,20 @@ function getComputerSelection() {
 
 //Take the user input and the computer input and evaluate who the winner is
 function playRound(playerSelection, computerSelection) {
-
-    console.log("USER:" + playerSelection + "   -   " + "PC:" + computerSelection);
+    selection.textContent = "USER: " + playerSelection + "   -   " + "PC: " + computerSelection;
 
     if (playerSelection == "rock" && computerSelection == "scissor" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissor" && computerSelection == "paper") {
         playerScore++;
-        console.log("You have won! - Score: USER:" + playerScore + " - " + "PC:" + computerScore);
+        scoreboard.textContent = "You have won! - Score: USER:" + playerScore + " - " + "PC:" + computerScore;
     }
 
     else if (playerSelection == "scissor" && computerSelection == "rock" || playerSelection == "rock" && computerSelection == "paper" || playerSelection == "paper" && computerSelection == "scissor") {
         computerScore++;
-        console.log("You have lost! - Score: USER:" + playerScore + " - " + "PC:" + computerScore);
+        scoreboard.textContent = "You have lost! - Score: USER:" + playerScore + " - " + "PC:" + computerScore;
     }
 
     else {
-        console.log("It is a tie! - Score: USER:" + playerScore + " - " +   "PC:" + computerScore);
+        scoreboard.textContent = "It is a tie! - Score: USER:" + playerScore + " - " +   "PC:" + computerScore;
     }
 }
 
