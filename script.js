@@ -1,17 +1,28 @@
-const playerSelection = 0;
+let playerSelection;
 const computerSelection = 0;
 
 let playerScore = 0;
 let computerScore = 0;
 
 
-playRound(getPlayerSelection(), getComputerSelection());
+const rockBtn = document.getElementById("rock");
+const paperBtn = document.getElementById("paper");
+const scissorBtn = document.getElementById("scissor");
 
-//Get the input from the user
-function getPlayerSelection() {
-    const playerChoice = prompt().toLowerCase();
-    return playerChoice;
-}
+rockBtn.addEventListener("click", () => {
+    playerSelection = "rock";
+    playRound(playerSelection, getComputerSelection());
+})
+
+paperBtn.addEventListener("click", () => {
+    playerSelection = "paper";
+    playRound(playerSelection, getComputerSelection());
+})
+
+scissorBtn.addEventListener("click", () => {
+    playerSelection = "scissor";
+    playRound(playerSelection, getComputerSelection());
+})
 
 //Get Input from Computer
 function getComputerSelection() {
